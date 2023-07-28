@@ -9,6 +9,7 @@ export class UserRepository {
         fullName: payload.fullName,
         email: payload.email,
         password: payload.password,
+        createdAt: Date.now(),
       })
 
       return await newUser.save()

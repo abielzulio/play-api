@@ -6,6 +6,7 @@ const UserSchema = new Schema({
   userName: String,
   email: String,
   password: String,
+  createdAt: Date,
 })
 
 export default model("User", UserSchema)

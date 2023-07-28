@@ -4,6 +4,7 @@ const VideoSchema = new Schema({
   id: String,
   title: String,
   thumbnail: String,
+  createdAt: Date,
 })
 
 export default model("Video", VideoSchema)

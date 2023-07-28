@@ -10,6 +10,7 @@ export class ProductRepository {
         title: payload.title,
         price: payload.price,
         videoId: payload.videoId,
+        createdAt: Date.now(),
       })
 
       return await newProduct.save()
@@ -20,7 +21,10 @@ export class ProductRepository {
 
   async getAllProducts(videoId) {
     try {
-      const products = Product.find({ videoId }, "id link title price").lean()
+      const products = Product.find(
+        { videoId },
+        "id link title price createdAt"
+      ).lean()
       return products
     } catch (error) {
       throw error
