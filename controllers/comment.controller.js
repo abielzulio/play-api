@@ -1,6 +1,6 @@
-import { CommentService } from "../service/comment.service"
+import { CommentService } from "../service/comment.service.js"
 
-const createComment = async (req, res) => {
+export const createComment = async (req, res) => {
   try {
     const commentService = new CommentService()
     const comment = await commentService.createComment(
@@ -13,7 +13,7 @@ const createComment = async (req, res) => {
   }
 }
 
-const getAllComments = async (req, res) => {
+export const getAllComments = async (req, res) => {
   try {
     const commentService = new CommentService()
     const comments = await commentService.getAllComments(req.params.videoId)
@@ -22,5 +22,3 @@ const getAllComments = async (req, res) => {
     res.status(500).json({ meta: { status: 500, message: error.message } })
   }
 }
-
-export default { createComment, getAllComments }

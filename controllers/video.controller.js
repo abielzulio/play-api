@@ -1,6 +1,6 @@
-import VideoService from "../service/video.service"
+import { VideoService } from "../service/video.service.js"
 
-const createVideo = async (req, res) => {
+export const createVideo = async (req, res) => {
   try {
     const videoService = new VideoService()
     const video = await videoService.createVideo(req.body)
@@ -10,7 +10,7 @@ const createVideo = async (req, res) => {
   }
 }
 
-const getAllVideos = async (req, res) => {
+export const getAllVideos = async (req, res) => {
   try {
     const videoService = new VideoService()
     const videos = await videoService.getAllVideos()
@@ -19,5 +19,3 @@ const getAllVideos = async (req, res) => {
     res.status(500).json({ meta: { status: 500, message: error.message } })
   }
 }
-
-export default { createVideo, getAllVideos }

@@ -1,6 +1,6 @@
-import { ProductService } from "../service/product.service"
+import { ProductService } from "../service/product.service.js"
 
-const createProduct = async (req, res) => {
+export const createProduct = async (req, res) => {
   try {
     const productService = new ProductService()
     const product = await productService.createProduct(
@@ -13,7 +13,7 @@ const createProduct = async (req, res) => {
   }
 }
 
-const getAllProducts = async (req, res) => {
+export const getAllProducts = async (req, res) => {
   try {
     const productService = new ProductService()
     const products = await productService.getAllProducts(req.params.videoId)
@@ -22,5 +22,3 @@ const getAllProducts = async (req, res) => {
     res.status(500).json({ meta: { status: 500, message: error.message } })
   }
 }
-
-export default { createProduct, getAllProducts }
