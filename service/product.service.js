@@ -1,4 +1,4 @@
-const { ProductRepository } = require("../domain/product/product.repository")
+import { ProductRepository } from "../domain/product/product.repository.js"
 
 export class ProductService {
   constructor() {

@@ -1,5 +1,5 @@
-import Video from "./video.entity"
-import nanoid from "nanoid"
+import Video from "./video.entity.js"
+import { nanoid } from "nanoid"
 
 export class VideoRepository {
   async createVideo(payload) {

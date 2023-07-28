@@ -1,5 +1,5 @@
 import { nanoid } from "nanoid"
-import { VideoRepository } from "../domain/video/video.repository"
+import { VideoRepository } from "../domain/video/video.repository.js"
 
 export class VideoService {
   constructor() {

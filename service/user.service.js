@@ -1,4 +1,4 @@
-import { UserRepository } from "../domain/user/user.repository"
+import { UserRepository } from "../domain/user/user.repository.js"
 
 export class UserService {
   constructor() {
