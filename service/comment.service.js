@@ -10,7 +10,7 @@ export class CommentService {
       return await this.commentRepository.createComment({
         videoId: videoId,
         comment: comment.comment,
-        username: comment.username,
+        userName: comment.userName,
       })
     } catch (error) {
       throw error
