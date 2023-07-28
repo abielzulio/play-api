@@ -2,6 +2,17 @@ import { ProductService } from "../service/product.service.js"
 
 export const createProduct = async (req, res) => {
   try {
+    const { link, title, price } = req.body
+    if (!link || !title || !price) {
+      return res.status(400).json({
+        meta: { status: 400, message: "Missing required body" },
+      })
+    }
+    if (!req.params.videoId) {
+      return res.status(400).json({
+        meta: { status: 400, message: "Missing required param" },
+      })
+    }
     const productService = new ProductService()
     const product = await productService.createProduct(
       req.body,

@@ -2,6 +2,16 @@ import { VideoService } from "../service/video.service.js"
 
 export const createVideo = async (req, res) => {
   try {
+    const { thumbnail, title, url } = req.body
+    if (!thumbnail || !title || !url) {
+      return res.status(400).json({
+        meta: {
+          status: 400,
+          message: `Missing required body`,
+        },
+      })
+    }
+
     const videoService = new VideoService()
     const video = await videoService.createVideo(req.body)
     res.status(201).json({ meta: { status: 201 }, data: video })
