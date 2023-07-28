@@ -8,6 +8,8 @@ export class VideoRepository {
         id: nanoid(),
         thumbnail: payload.thumbnail,
         title: payload.title,
+        url: payload.url,
+        createdAt: Date.now(),
       })
 
       return newVideo.save()
@@ -18,7 +20,7 @@ export class VideoRepository {
 
   async getAllVideos() {
     try {
-      const videos = Video.find({}, "id thumbnail title").lean()
+      const videos = Video.find({}, "id thumbnail title url createdAt").lean()
       return videos
     } catch (error) {
       throw error

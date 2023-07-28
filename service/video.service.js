@@ -12,6 +12,7 @@ export class VideoService {
         id: nanoid(),
         thumbnail: video.thumbnail,
         title: video.title,
+        url: video.url,
       })
     } catch (error) {
       throw error
