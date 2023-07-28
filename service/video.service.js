@@ -1,13 +1,26 @@
-import { UserRepository } from "../domain/user/user.repository"
+import { nanoid } from "nanoid"
+import { VideoRepository } from "../domain/video/video.repository"
 
-export class UserService {
+export class VideoService {
   constructor() {
-    this.userRepository = new UserRepository()
+    this.videoRepository = new VideoRepository()
   }
 
-  async createUser(user) {
+  async createVideo(video) {
     try {
-      return await this.userRepository.createUser(user)
+      return await this.videoRepository.createVideo({
+        id: nanoid(),
+        thumbnail: video.thumbnail,
+        title: video.title,
+      })
+    } catch (error) {
+      throw error
+    }
+  }
+
+  async getAllVideos() {
+    try {
+      return await this.videoRepository.getAllVideos()
     } catch (error) {
       throw error
     }
