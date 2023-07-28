@@ -6,7 +6,7 @@ export class UserRepository {
     try {
       const newUser = new User({
         id: nanoid(),
-        fullname: payload.fullname,
+        fullName: payload.fullName,
         email: payload.email,
         password: payload.password,
       })

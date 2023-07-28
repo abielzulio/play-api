@@ -6,7 +6,7 @@ export class CommentRepository {
       const newComment = new Comment({
         videoId: payload.videoId,
         comment: payload.comment,
-        username: payload.username,
+        userName: payload.userName,
         createdAt: Date.now(),
       })
 
