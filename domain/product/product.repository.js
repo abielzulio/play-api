@@ -1,10 +1,11 @@
+import { nanoid } from "nanoid"
 import Product from "./product.entity.js"
 
 export class ProductRepository {
   async createProduct(payload) {
     try {
       const newProduct = new Product({
-        id: uuid.v4(),
+        id: nanoid(),
         link: payload.link,
         title: payload.title,
         price: payload.price,
