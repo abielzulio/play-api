@@ -18,7 +18,7 @@ export class VideoRepository {
 
   async getAllVideos() {
     try {
-      const videos = video.find({}, "id thumbnail").lean()
+      const videos = Video.find({}, "id thumbnail title").lean()
       return videos
     } catch (error) {
       throw error
